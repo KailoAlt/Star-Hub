@@ -170,9 +170,6 @@ end)
 createBtn(tab2Frame,"unwalk(speed) ",290,function()
     loadstring(game:HttpGet("https://pastebin.com/raw/ZM6iUY2y"))()
 end)
-createBtn(tab2Frame,lagger(need aura) ",330,function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DupeSab/FPS/refs/heads/main/DEVOURER"))()
-end)
 
 -- Chuyển tab
 tab1Btn.MouseButton1Click:Connect(function()
