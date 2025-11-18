@@ -133,6 +133,7 @@ createBtn(tab1Frame,"quit ",50,function()
 end)
 createBtn(tab1Frame,"desync",90,function()
     loadstring(game:HttpGet("https://pastebin.com/raw/DBEUjvj7"))()
+end)
 createBtn(tab1Frame,"Animation",130,function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G"))()
 end)
@@ -170,6 +171,10 @@ end)
 createBtn(tab2Frame,"unwalk(speed) ",290,function()
     loadstring(game:HttpGet("https://pastebin.com/raw/ZM6iUY2y"))()
 end)
+createBtn(tab2Frame,lagger(need aura) ",330,function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DupeSab/FPS/refs/heads/main/DEVOURER"))()
+end)
+
 
 -- Chuyển tab
 tab1Btn.MouseButton1Click:Connect(function()
