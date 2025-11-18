@@ -168,6 +168,33 @@ end)
 createBtn(tab2Frame,"pvp",170,function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Jz34K8Bx"))()
 end)
+
+createBtn(tab2Frame,"speed",170,function()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+
+local boostGui
+local enforceConnection
+local boostBtn
+local boostAktif = false
+local dragToggle, dragInput, dragStart, startPos
+
+local function startEnforceSpeed()
+	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid")
+
+	enforceConnection = RunService.Heartbeat:Connect(function()
+		if humanoid.WalkSpeed ~= 42 then
+			humanoid.WalkSpeed = 42
+		end
+	end)
+
+	humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+		if boostAktif and humanoid.WalkSpeed ~= 42 then
+			humanoid.WalkSpeed = 42
+end)
 -- Chuyển tab
 tab1Btn.MouseButton1Click:Connect(function()
     tab1Frame.Visible = true
