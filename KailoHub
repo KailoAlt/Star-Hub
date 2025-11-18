@@ -128,7 +128,7 @@ end
 createBtn(tab1Frame,"Esp Player Vip",10,function()
     loadstring(game:HttpGet("https://pastefy.app/maq6Ped3/raw"))()
 end)
-createBtn(tab1Frame,"lag crasher ",50,function()
+createBtn(tab1Frame,"quit ",50,function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Invooker11/Outfit/main/OutfitCopier.lua"))()
 end)
 createBtn(tab1Frame,"desync",90,function()
