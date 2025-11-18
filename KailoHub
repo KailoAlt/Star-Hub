@@ -156,7 +156,8 @@ createBtn(tab2Frame,"Lennon",50,function()
 end)
 createBtn(tab2Frame,"IsT Steal(kinda patched)",90,function()
     loadstring(game:HttpGet("https://cdn.authguard.org/virtual-file/0cc6c8748e2544638c599bc519293bcc"))() end)
-createBtn(tab2Frame,"Kick",130,function()
+createBtn(tab2Frame,"Kick",130
+,function()
     loadstring(game:HttpGet("https://pastefy.app/74k8lX9w/raw"))()
 end)
 createBtn(tab2Frame,"Xray",170,function()
@@ -175,7 +176,6 @@ end)
 createBtn(tab2Frame,"lagger(need aura)",330,function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/DupeSab/FPS/refs/heads/main/DEVOURER"))()
 end)
-
 -- Chuyển tab
 tab1Btn.MouseButton1Click:Connect(function()
     tab1Frame.Visible = true
