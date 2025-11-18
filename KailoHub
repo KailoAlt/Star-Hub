@@ -170,7 +170,7 @@ createBtn(tab1Frame,"instant fish ",290,function()
 end)
 createBtn(tab1Frame,"unwalk(speed) ",290,function()
  loadstring(game:HttpGet("https://pastebin.com/raw/ZM6iUY2y"))()
-end
+end)
 
 -- Chuyển tab
 tab1Btn.MouseButton1Click:Connect(function()
