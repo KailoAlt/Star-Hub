@@ -146,9 +146,6 @@ end)
 createBtn(tab1Frame,"ESP Sec",250,function()
     loadstring(game:HttpGet("https://pastefy.app/m3H25ey0/raw"))()
 end)
-createBtn(tab1Frame,"instant fish ",290,function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/LucasggkX/Games/refs/heads/main/Auto%20Fishing.lua"))()
-end)
 
 -- Tab 2 Buttons
 createBtn(tab2Frame,"Scripts",10,function()
@@ -162,11 +159,16 @@ createBtn(tab2Frame,"IsT Steal(kinda patched)",90,function()
 createBtn(tab2Frame,"Kick",130,function()
     loadstring(game:HttpGet("https://pastefy.app/74k8lX9w/raw"))()
 end)
+
 createBtn(tab2Frame,"Xray",170,function()
     loadstring(game:HttpGet("https://pastefy.app/sEDu2fRg/raw"))()
 end)
-createBtn(tab2Frame,"pvp",170,function()
+
+createBtn(tab2Frame,"pvp",210,function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Jz34K8Bx"))()
+end)
+createBtn(tab1Frame,"instant fish ",290,function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LucasggkX/Games/refs/heads/main/Auto%20Fishing.lua"))()
 end)
 
 -- Chuyển tab
