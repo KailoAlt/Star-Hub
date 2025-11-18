@@ -166,7 +166,8 @@ createBtn(tab2Frame,"Xray",170,function()
     loadstring(game:HttpGet("https://pastefy.app/sEDu2fRg/raw"))()
 end)
 createBtn(tab2Frame,"pvp",170,function()
-
+loadstring(game:HttpGet("https://pastebin.com/raw/Jz34K8Bx"))()
+end)
 -- Chuyển tab
 tab1Btn.MouseButton1Click:Connect(function()
     tab1Frame.Visible = true
