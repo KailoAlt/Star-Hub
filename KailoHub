@@ -30,7 +30,7 @@ mainFrame.ClipsDescendants = true
 
 -- Shadow & bo góc
 local uiStroke = Instance.new("UIStroke")
-uiStroke.Color = Color3.fromRGB(0,0,0)
+v:FindFirstChildOfClass("UIStroke").Color= Color3.fromRGB(0,0,0)
 uiStroke.Thickness = 1
 uiStroke.Parent = mainFrame
 
@@ -166,8 +166,7 @@ createBtn(tab2Frame,"pvp",210,function()
     loadstring(game:HttpGet("https://pastebin.com/raw/Jz34K8Bx"))()
 end)
 createBtn(tab2Frame, "instant fish", 250, function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/LucasggkX/Games/refs/heads/main
-Auto%20Fishing.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/LucasggkX/Games/refs/heads/main/Auto%20Fishing.lua"))()
 end)
 createBtn(tab2Frame,"unwalk(speed)",290,function()
     loadstring(game:HttpGet("https://pastebin.com/raw/ZM6iUY2y"))()
