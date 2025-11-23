@@ -15,7 +15,7 @@ end)
 -- ScreenGui
 local gui = Instance.new("ScreenGui")
 gui.Name = "MiniGuiModern"
-gui.Parent = CoreGui
+gui.Parent = CoreGui -- DO NOT TOUCH
 gui.ResetOnSpawn = false
 
 -- Frame chính
@@ -30,7 +30,7 @@ mainFrame.ClipsDescendants = true
 
 -- Shadow & bo góc
 local uiStroke = Instance.new("UIStroke")
-v:FindFirstChildOfClass("UIStroke").Color= Color3.fromRGB(0,0,0)
+uiStroke.Color = Color3.fromRGB(0,0,0)
 uiStroke.Thickness = 1
 uiStroke.Parent = mainFrame
 
@@ -109,14 +109,14 @@ local function createBtn(parent,name,posY,callback)
 
     -- UIStroke viền nút
     local stroke = Instance.new("UIStroke")
-    stroke.Color = Color3.fromRGB(255,0,0) -- mặc định đỏ
+    stroke.Color = Color3.fromRGB(255,0,0)
     stroke.Thickness = 2
     stroke.Parent = btn
 
     btn.MouseButton1Click:Connect(function()
         for _,v in pairs(parent:GetChildren()) do
             if v:IsA("TextButton") and v:FindFirstChildOfClass("UIStroke") then
-                v.UIStroke.Color = Color3.fromRGB(255,0,0)
+                v:FindFirstChildOfClass("UIStroke").Color = Color3.fromRGB(255,0,0)
             end
         end
         stroke.Color = Color3.fromRGB(0,255,0)
@@ -155,7 +155,8 @@ createBtn(tab2Frame,"Lennon",50,function()
     loadstring(game:HttpGet("https://pastefy.app/J3oDjwQ5/raw"))()
 end)
 createBtn(tab2Frame,"IsT Steal(kinda patched)",90,function()
-    loadstring(game:HttpGet("https://cdn.authguard.org/virtual-file/0cc6c8748e2544638c599bc519293bcc"))() end)
+    loadstring(game:HttpGet("https://cdn.authguard.org/virtual-file/0cc6c8748e2544638c599bc519293bcc"))()
+end)
 createBtn(tab2Frame,"Kick",130,function()
     loadstring(game:HttpGet("https://pastefy.app/74k8lX9w/raw"))()
 end)
@@ -220,39 +221,41 @@ toggleBtn.MouseButton1Click:Connect(function()
     mainFrame.Visible = not mainFrame.Visible
 end)
 
--- Hàm Drag chuẩn
+-- Fixed Drag System
 local function makeDraggable(guiObj, dragHandle)
     dragHandle = dragHandle or guiObj
     local dragging = false
-    local dragStart, startPos
-
-    local function update(input)
-        local delta = input.Position - dragStart
-        guiObj.Position = UDim2.new(
-            startPos.X.Scale, startPos.X.Offset + delta.X,
-            startPos.Y.Scale, startPos.Y.Offset + delta.Y
-        )
-    end
+    local dragInput
+    local dragStart
+    local startPos
 
     dragHandle.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
             dragging = true
             dragStart = input.Position
             startPos = guiObj.Position
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
         end
     end)
 
     dragHandle.InputChanged:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-            if dragging then
-                update(input)
-            end
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            dragInput = input
         end
     end)
 
-    UserInputService.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-            dragging = false
+    UserInputService.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            local delta = input.Position - dragStart
+            guiObj.Position = UDim2.new(
+                startPos.X.Scale, startPos.X.Offset + delta.X,
+                startPos.Y.Scale, startPos.Y.Offset + delta.Y
+            )
         end
     end)
 end
